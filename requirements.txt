@@ -1,0 +1,15 @@
+pandas
+numpy
+lightgbm
+scikit-learn
+shap
+matplotlib
+seaborn
+plotly
+streamlit
+openmeteo-requests
+requests-cache
+retry-requests
+holidays
+jupyter
+openpyxl
