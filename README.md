@@ -25,14 +25,9 @@ demand-forecast/
 │   ├── 02_feature_engineering.ipynb  # Özellik mühendisliği
 │   ├── 03_modeling.ipynb             # Model eğitimi ve değerlendirme
 │   └── 04_shap_analysis.ipynb        # SHAP özellik önem analizi
-├── src/
-│   ├── data_loader.py    # Veri yükleme fonksiyonları
-│   ├── features.py       # Lag, rolling ve takvim özellikleri
-│   └── utils.py          # Metrik hesaplama ve yardımcı fonksiyonlar
 ├── models/               # Eğitilmiş .pkl model dosyaları
 ├── outputs/
-│   ├── figures/          # Grafikler ve SHAP görselleri
-│   └── reports/          # Metrik raporları
+│   └── figures/          # Grafikler ve SHAP görselleri
 ├── app/
 │   └── dashboard.py      # Streamlit dashboard (3 sayfa)
 ├── requirements.txt
