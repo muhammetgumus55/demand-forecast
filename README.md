@@ -4,7 +4,7 @@ LightGBM tabanlı makine öğrenmesi modeli ile Türkiye elektrik şebekesi içi
 
 ## Genel Bakış
 
-Bu proje, EPİAŞ saatlik tüketim verisi ve Open-Meteo hava durumu verisini birleştirerek **D+1 (ertesi gün)** bazında saatlik elektrik talebi tahmini yapar.
+Bu proje, Kaggle üzerinden temin edilen 2018–2023 yıllarına ait Türkiye saatlik elektrik tüketim verisi kullanılarak **D+1 (ertesi gün)** bazında saatlik elektrik talebi tahmini yapar.
 
 **Model Performansı:**
 | Metrik | LightGBM | Baseline (Naive) |
@@ -26,8 +26,8 @@ demand-forecast/
 │   ├── 03_modeling.ipynb             # Model eğitimi ve değerlendirme
 │   └── 04_shap_analysis.ipynb        # SHAP özellik önem analizi
 ├── src/
-│   ├── data_loader.py    # EPİAŞ ve Open-Meteo veri yükleme fonksiyonları
-│   ├── features.py       # Lag, rolling, CDD/HDD ve takvim özellikleri
+│   ├── data_loader.py    # Veri yükleme fonksiyonları
+│   ├── features.py       # Lag, rolling ve takvim özellikleri
 │   └── utils.py          # Metrik hesaplama ve yardımcı fonksiyonlar
 ├── models/               # Eğitilmiş .pkl model dosyaları
 ├── outputs/
@@ -41,17 +41,14 @@ demand-forecast/
 
 ## Metodoloji
 
-### Veri Kaynakları
-- **Tüketim:** EPİAŞ — saatlik toplam tüketim (MWh)
-- **Hava Durumu:** Open-Meteo API — sıcaklık, nem, rüzgar hızı
-- **Fiyat:** EPİAŞ spot piyasa fiyatları (TRY, USD, EUR / MWh)
+### Veri Kaynağı
+- **Tüketim:** Kaggle — Türkiye saatlik elektrik tüketimi (2018–2023)
 
 ### Özellik Mühendisliği
 - **Lag özellikleri:** 24 sa, 48 sa, 168 sa (1 hafta), 336 sa (2 hafta) gecikmeli tüketim
 - **Rolling istatistikler:** 24 sa / 168 sa ortalama ve standart sapma, 72 sa maksimum
 - **Takvim:** Saat, gün, ay ve haftanın günü için sinüs/kosinüs döngüsel kodlama
 - **Tatil bayrağı:** Türkiye resmi tatilleri
-- **CDD / HDD:** Soğutma/ısıtma derece-gün değerleri
 
 ### Model
 - **Algoritma:** LightGBM (Gradient Boosting)
@@ -100,5 +97,4 @@ Dashboard üç sayfa içerir:
 | Özellik önemi | SHAP |
 | Görselleştirme | matplotlib, seaborn, plotly |
 | Dashboard | Streamlit |
-| Hava durumu API | openmeteo-requests |
 | Tatil takvimi | holidays |
