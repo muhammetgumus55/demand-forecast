@@ -17,8 +17,8 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 # Yollar
 # ---------------------------------------------------------------------------
 BASE_DIR   = Path(__file__).parent.parent
-MODEL_PATH = BASE_DIR / "models" / "lgbm_model.pkl"
-META_PATH  = BASE_DIR / "models" / "model_meta.pkl"
+MODEL_PATH = BASE_DIR / "models" / "lgbm_model_no_gen.pkl"
+META_PATH  = BASE_DIR / "models" / "model_meta_no_gen.pkl"
 DATA_PATH  = BASE_DIR / "data"   / "processed" / "featured_data.csv"
 SHAP_IMG   = BASE_DIR / "outputs" / "figures" / "shap_summary_bar.png"
 
@@ -45,23 +45,6 @@ FEAT_DESC = {
     "year":                "Yıl — uzun dönemli trend",
     "is_weekend":          "Hafta sonu bayrağı (1=hafta sonu)",
     "is_holiday":          "Resmi tatil bayrağı",
-    "total_generation_MWh":"Toplam elektrik üretimi (MWh)",
-    "natural_gas":         "Doğal gaz kaynaklı üretim",
-    "hydro_dam":           "Baraj hidroelektrik üretimi",
-    "lignite":             "Linyit kömürü üretimi",
-    "hydro_river":         "Nehir akıntısı hidroelektrik üretimi",
-    "coal_imported":       "İthal kömür üretimi",
-    "wind":                "Rüzgar enerjisi üretimi",
-    "solar":               "Güneş enerjisi üretimi",
-    "fuel_oil":            "Fuel-oil üretimi",
-    "geothermal":          "Jeotermal enerji üretimi",
-    "asphaltite_coal":     "Asfaltit kömür üretimi",
-    "hard_coal":           "Taş kömürü üretimi",
-    "biomass":             "Biyokütle üretimi",
-    "naphtha":             "Nafta üretimi",
-    "LNG":                 "Sıvılaştırılmış doğal gaz üretimi",
-    "international":       "Uluslararası enerji transferi",
-    "waste_heat":          "Atık ısı geri kazanımı",
     "TRY/MWh":             "TL cinsinden elektrik spot fiyatı",
     "USD/MWh":             "Dolar cinsinden elektrik spot fiyatı",
     "EUR/MWh":             "Euro cinsinden elektrik spot fiyatı",
