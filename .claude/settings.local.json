@@ -5,7 +5,18 @@
       "Bash(.venv/Scripts/python:*)",
       "Bash(.venv/Scripts/jupyter nbconvert:*)",
       "Bash(.venv/Scripts/python.exe:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(.venv/Scripts/streamlit run:*)",
+      "Bash(taskkill /F /IM \"streamlit.exe\")",
+      "Bash(taskkill /F /FI \"WINDOWTITLE eq streamlit*\")",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":8501\")",
+      "Bash(taskkill:*)",
+      "Bash(cmd:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(find /c/Projects/demand-forecast/data -type f -exec ls -lh {} \\\\;)"
     ]
   }
 }
